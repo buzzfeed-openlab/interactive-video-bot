@@ -1,15 +1,17 @@
 var request = require('request'),
-    Particle = require('particle-api-js'),
-    config = require('./config.json');
+    Particle = require('particle-api-js');
 
-var particle = new Particle();
-var particleToken;
+var configPath = (process.argv[2] || './config.json'),
+    config = require(configPath);
 
-var fbToken = config.facebookConfig.client_id + '|' + config.facebookConfig.client_secret;
-var fbURI = 'https://graph.facebook.com/v2.6/' + config.facebookConfig.video_id + '/comments?access_token=' + fbToken + '&order=reverse_chronological';
+var particle = new Particle(),
+    particleToken;
 
-var seenComments = {};
-var totalQueries = 0;
+var fbToken = config.facebookConfig.client_id + '|' + config.facebookConfig.client_secret,
+    fbURI = 'https://graph.facebook.com/v2.6/' + config.facebookConfig.video_id + '/comments?access_token=' + fbToken + '&order=reverse_chronological';
+
+var seenComments = {},
+    totalQueries = 0;
 
 function containsAnyOf(needles, haystack) {
     for (var i = 0; i < needles.length; ++i) {
