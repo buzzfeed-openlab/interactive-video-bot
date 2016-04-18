@@ -1,0 +1,25 @@
+{
+    "interval": 1000,
+    "reallyActuallyTrigger": false,
+
+    "particleConfig": {
+        "username": "PARTICLE_LOGIN",
+        "password": "PARTICLE_PW"
+    },
+
+    "event": {
+        "name": "EVENT_NAME",
+        "data": {},
+        "isPrivate": true
+    },
+
+    "facebookConfig": {
+        "client_id": "CLIENT_ID",
+        "client_secret": "CLIENT_SECRET",
+        "video_id": "VIDEO_ID"
+    },
+
+    "triggers": [
+        "feed (.*)(puppies|dogs|puppers)"
+    ]
+}
