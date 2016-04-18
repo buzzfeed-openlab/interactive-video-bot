@@ -60,7 +60,12 @@ function queryComments(cb) {
 
         // if there were triggers, fire an event!
         if (numTriggers && config.reallyActuallyTrigger) {
-            var publishEventPr = particle.publishEvent({ name: 'some_event', data: {}, auth: particleToken, isPrivate: true });
+            var publishEventPr = particle.publishEvent({
+                name: config.event.name,
+                data: config.event.data,
+                auth: particleToken,
+                isPrivate: config.event.isPrivate
+            });
 
             publishEventPr.then(
               function(data) {
