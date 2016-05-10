@@ -5,7 +5,7 @@
 
 ### Quickstart
 
-1. `git clone https://github.com/buzzfeed-openlab/fb-comment-bot.git && cd fb-comment-bot`
+1. `git clone https://github.com/buzzfeed-openlab/interactive-video-bot.git && cd interactive-video-bot`
 2. `npm install`
 3. `cp sample-config.json config.json`
 4. Enter your credentials, set up your triggers, etc in your `config.json`
